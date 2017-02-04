@@ -1,12 +1,12 @@
 public class Wedding{
 
 	public void main(StringArgs args[]){
-		Person bride = new Person("Anna", "Bauer");
-		Person groom = new Person("Lukas", "Siedel");
+		Person bride = new Person("Anna", "Bauer", "015254694553");
+		Person groom = new Person("Lukas", "Siedel", "01723447439");
 		List<Person> guests = new ArrayList<Person>();
-		guests.addAll(PersonRegister.getAllFriends());
-		guests.addAll(PersonRegister.getAllFamily());
-		if(marry(bride, groom)){
+		guests.addAll(DB.selectAllFriends());
+		guests.addAll(DB.selectAllFamily());
+		if(marry(bride, groom, guests)){
 			bride.setName("Siedel");
 		}
 	}
