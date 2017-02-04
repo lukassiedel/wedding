@@ -3,8 +3,10 @@ public class Wedding{
 	public void main(StringArgs args[]){
 		Person bride = new Person("Anna", "Bauer");
 		Person groom = new Person("Lukas", "Siedel");
-
-		if(marry()){
+		List<Person> guests = new ArrayList<Person>();
+		guests.addAll(PersonRegister.getAllFriends());
+		guests.addAll(PersonRegister.getAllFamily());
+		if(marry(bride, groom)){
 			bride.setName("Siedel");
 		}
 	}
